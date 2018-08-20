@@ -15,7 +15,7 @@ RUN apk add --no-cache ca-certificates gnupg && \
     grep linux_amd64 vault-unsealer_${UNSEALER_VER}_checksums.txt | sha256sum -c && \
     mv vault-unsealer_${UNSEALER_VER}_linux_amd64/vault-unsealer_${UNSEALER_VER}_linux_amd64 /bin/vault-unsealer && \
     chmod a+x /bin/vault-unsealer && \
-    apk del gnupg openssl && \
+    apk del gnupg && \
     rm -rf /root/.gnupg && \
     rm vault-unsealer_${UNSEALER_VER}_checksums.txt vault-unsealer_${UNSEALER_VER}_checksums.txt.asc && \
     rmdir vault-unsealer_${UNSEALER_VER}_linux_amd64
