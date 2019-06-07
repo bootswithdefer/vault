@@ -6,7 +6,7 @@ RUN addgroup -g 513 docker && adduser -D -u 1000 -G docker jenkins
 ENV UNSEALER_VER=0.2.1
 
 RUN apk add --no-cache ca-certificates gnupg && \
-    gpg --keyserver pgp.mit.edu --recv-keys 9A1C42C8F5AA3CE6 && \
+    gpg --keyserver pool.sks-keyservers.net --recv-keys 9A1C42C8F5AA3CE6 && \
     wget https://github.com/jetstack/vault-unsealer/releases/download/${UNSEALER_VER}/vault-unsealer_${UNSEALER_VER}_checksums.txt && \
     wget https://github.com/jetstack/vault-unsealer/releases/download/${UNSEALER_VER}/vault-unsealer_${UNSEALER_VER}_checksums.txt.asc && \
     mkdir vault-unsealer_${UNSEALER_VER}_linux_amd64 && \
