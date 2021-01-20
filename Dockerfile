@@ -3,7 +3,7 @@ MAINTAINER Jesse DeFer <docker-vault@dotd.com>
 
 RUN addgroup -g 513 docker && adduser -D -u 1000 -G docker jenkins
 
-ENV UNSEALER_VER=0.2.1
+ENV UNSEALER_VER=0.3.1
 
 RUN apk add --no-cache ca-certificates gnupg && \
     gpg --keyserver pool.sks-keyservers.net --recv-keys 9A1C42C8F5AA3CE6 && \
